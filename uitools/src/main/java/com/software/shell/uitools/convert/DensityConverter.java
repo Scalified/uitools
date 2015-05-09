@@ -37,7 +37,7 @@ public final class DensityConverter {
 	private static final String LOG_TAG = String.format("[UI Tools][%s]", DensityConverter.class.getSimpleName());
 
 	/**
-	 * Prevents from creating {@link DensityConverter} instances
+	 * Forbids creation of the {@link DensityConverter} instances
 	 */
 	private DensityConverter() {
 	}

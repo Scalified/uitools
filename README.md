@@ -15,7 +15,7 @@ The Library requires **Android SDK version 9 (Gingerbread)** and higher
 
 ```java
 dependencies {
-	compile 'com.github.shell-software:uitools:0.9.0'
+	compile 'com.github.shell-software:uitools:1.0.0'
 }
 ```
 
@@ -64,7 +64,7 @@ int lighterColor = ColorModifier.modifyExposure(color, 1.5f);
 
 ### DensityConverter
 
-**DensityConverter** contains utility methods for density values conversion based on current device's display metrics. 
+**DensityConverter** contains utility methods for density values conversion based on the current device's display metrics. 
 
 To convert the density-independent pixels into density-dependent ones and vice versa:
 

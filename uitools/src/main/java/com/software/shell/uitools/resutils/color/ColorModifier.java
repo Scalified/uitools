@@ -36,6 +36,12 @@ public class ColorModifier {
 	private static final String LOG_TAG = String.format("[UI Tools][%s]", ColorModifier.class.getSimpleName());
 
 	/**
+	 * Forbids creation of the {@link ColorModifier} instances
+	 */
+	private ColorModifier() {
+	}
+
+	/**
 	 * Modifies the color exposure using the special factor.
 	 * Depending on factor the result color become lighter or darker
 	 * <p>
