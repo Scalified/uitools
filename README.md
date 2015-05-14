@@ -96,7 +96,8 @@ float densityPixels = DensityConverter.pxToDp(getContext(), pixels);
   limitations under the License.
 ```
 
-## Shell Software Inc. links
+## Shell Software Inc. Links
 
-* [Google+](https://plus.google.com/112119444427380215269)
-* [Twitter Page](https://twitter.com/shell_software)
+* [Shell Software Inc. Google+ Official Page](https://plus.google.com/112119444427380215269)
+* <a href="mailto:com.software.shell@gmail.com?subject=[UI Tools]: Proposals And Suggestions">Shell Software Inc. Gmail</a>
+* [Shell Software Inc. Twitter Official Page](https://twitter.com/shell_software)
