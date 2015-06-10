@@ -1,6 +1,6 @@
 # 1.1.0
 
-1. Changed the standard Android logging API to **SLF4J Logging API** 
+1. Changed the standard Android logging API to **SLF4J Logging API**
 
 # 1.0.0
 
