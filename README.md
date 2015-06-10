@@ -120,7 +120,7 @@ To enable logging:
 
 	```xml
 	<issue id="InvalidPackage" >
-    		<ignore path="**/logback-android-core/*" />
+    	<ignore path="**/logback-android-core/*" />
     </issue>
 	```
 
