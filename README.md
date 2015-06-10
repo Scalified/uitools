@@ -119,7 +119,9 @@ To enable logging:
 3. Add the following **InvalidPackage** ignore rule into **lint.xml** file (located @ the root of the project):
 
 	```xml
-	<issue id="InvalidPackage" severity="ignore" />
+	<issue id="InvalidPackage" >
+    		<ignore path="**/logback-android-core/*" />
+    </issue>
 	```
 
 ## License
