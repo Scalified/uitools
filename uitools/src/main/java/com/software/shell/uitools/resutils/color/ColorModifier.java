@@ -19,7 +19,8 @@
 package com.software.shell.uitools.resutils.color;
 
 import android.graphics.Color;
-import android.util.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Contains utility methods for color modification
@@ -31,9 +32,9 @@ import android.util.Log;
 public class ColorModifier {
 
 	/**
-	 * Logging tag
+	 * Logger
 	 */
-	private static final String LOG_TAG = String.format("[UI Tools][%s]", ColorModifier.class.getSimpleName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(ColorModifier.class);
 
 	/**
 	 * Forbids creation of the {@link ColorModifier} instances
@@ -60,7 +61,7 @@ public class ColorModifier {
 	 */
 	public static int modifyExposure(int color, float factor) {
 		float mFactor = factor >= 0 ? factor : 1.0f;
-		Log.v(LOG_TAG, "Changing color exposure with factor: " + mFactor);
+		LOGGER.trace("Changing color exposure with factor: {}", mFactor);
 		float hsv[] = new float[3];
 		Color.colorToHSV(color, hsv);
 		hsv[2] *= mFactor;

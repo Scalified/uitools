@@ -18,7 +18,8 @@
 
 package com.software.shell.uitools.resutils.id;
 
-import android.util.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -35,9 +36,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class IdGenerator {
 
 	/**
-	 * Logging tag
+	 * Logger
 	 */
-	private static final String LOG_TAG = String.format("[UI Tools][%s]", IdGenerator.class.getSimpleName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(IdGenerator.class);
 
 	/**
 	 * Forbids creation of the {@link IdGenerator} instances
@@ -65,7 +66,7 @@ public final class IdGenerator {
 				newValue = 1;
 			}
 			if (NEXT_ID.compareAndSet(result, newValue)) {
-				Log.v(LOG_TAG, "Next generated id is: " + result);
+				LOGGER.trace("Next generated ID is: {}", result);
 				return result;
 			}
 		}

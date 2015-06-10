@@ -15,15 +15,8 @@
 #
 # File created: 2015-04-04 16:55:50
 
--dontobfuscate
-
 -keep class *
 
 -keepclassmembers class * {
 	*;
-}
-
--assumenosideeffects class android.util.Log {
-    public static int v(...);
-    public static int d(...);
 }

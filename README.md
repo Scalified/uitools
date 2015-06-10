@@ -15,7 +15,7 @@ The Library requires **Android SDK version 9 (Gingerbread)** and higher
 
 ```java
 dependencies {
-	compile 'com.github.shell-software:uitools:1.0.0'
+	compile 'com.github.shell-software:uitools:1.1.0'
 }
 ```
 
@@ -23,7 +23,11 @@ dependencies {
 
 [**Full ChangeLog**](https://github.com/shell-software/uitools/blob/master/CHANGELOG.md)
 
-### 1.0.0 - *current*
+### 1.1.0 - *current*
+
+1. Changed the standard Android logging API to **SLF4J Logging API**
+
+### 1.0.0 - *previous*
 
 1. The first release! Everything is new.
 
@@ -77,6 +81,46 @@ float realPixels = DensityConverter.dpToPx(getContext(), pixels)
 // Convert to density-independent pixels:
 float densityPixels = DensityConverter.pxToDp(getContext(), pixels);
 ```
+
+## Logging
+
+To enable logging:
+
+1. Add the following dependency:
+
+	```java
+	dependencies {
+		compile 'com.github.tony19:logback-android-classic:1.1.1-3'
+	}
+	```
+2. Create the **logback.xml** file in the **src/main/assets** with the sample configuration:
+
+	```xml
+	<?xml version="1.0" encoding="UTF-8"?>
+	<configuration>
+		<appender name="LOGCAT" class="ch.qos.logback.classic.android.LogcatAppender">
+			<tagEncoder>
+				<pattern>%logger{0}</pattern>
+			</tagEncoder>
+			<encoder>
+				<pattern>%d{HH:mm:ss.SSS} [%thread] [%logger{0}] - %msg%n</pattern>
+			</encoder>
+		</appender>
+	
+		<root level="TRACE" additivity="false">
+			<appender-ref ref="LOGCAT" />
+		</root>
+	</configuration>
+	```
+	> You may wish to configure different appenders with different log levels for packages, classes etc.
+	
+	> More information about **LOGBack** can be found @ [LOGBack Project Site](http://logback.qos.ch)
+
+3. Add the following **InvalidPackage** ignore rule into **lint.xml** file (located @ the root of the project):
+
+	```xml
+	<issue id="InvalidPackage" severity="ignore" />
+	```
 
 ## License
 

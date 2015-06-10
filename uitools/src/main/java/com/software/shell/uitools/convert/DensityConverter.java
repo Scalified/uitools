@@ -19,7 +19,8 @@
 package com.software.shell.uitools.convert;
 
 import android.content.Context;
-import android.util.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Contains utility methods for density values conversion based on current
@@ -32,9 +33,9 @@ import android.util.Log;
 public final class DensityConverter {
 
 	/**
-	 * Logging tag
+	 * Logger
 	 */
-	private static final String LOG_TAG = String.format("[UI Tools][%s]", DensityConverter.class.getSimpleName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(DensityConverter.class);
 
 	/**
 	 * Forbids creation of the {@link DensityConverter} instances
@@ -51,7 +52,7 @@ public final class DensityConverter {
 	 */
 	public static float dpToPx(Context context, float dp) {
 		float result = dp * calculateDensityScaleFactor(context);
-		Log.v(LOG_TAG, String.format("Density-independent value [%s] converted to real pixel value [%s]", dp, result));
+		LOGGER.trace("Density-independent value: {} converted to real pixel value: {}", dp, result);
 		return result;
 	}
 
@@ -64,7 +65,7 @@ public final class DensityConverter {
 	 */
 	public static float pxToDp(Context context, float px) {
 		float result = px / calculateDensityScaleFactor(context);
-		Log.v(LOG_TAG, String.format("Real pixel value [%s] converted to density-independent value [%s]", px, result));
+		LOGGER.trace("Real pixel value: {} converted to density-independent value: {}", px, result);
 		return result;
 	}
 
@@ -78,7 +79,7 @@ public final class DensityConverter {
 	 */
 	private static float calculateDensityScaleFactor(Context context) {
 		float densityScaleFactor = context.getResources().getDisplayMetrics().density;
-		Log.v(LOG_TAG, "Density scale factor is: " + densityScaleFactor);
+		LOGGER.trace("Density scale factor is: {}", densityScaleFactor);
 		return densityScaleFactor;
 	}
 	
